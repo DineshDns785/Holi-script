@@ -464,6 +464,40 @@ h3 {
 </style>
 <head/>
   <body>
+<div id="welcomeScreen" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
+    
+    <h1 style="color: yellow; font-size: 30px; animation: bounce 1s infinite; margin-bottom: 180px;">✋ रुको! ✋</h1>
+    
+    <p style="color: white; font-size: 18px; margin: 5px 0 30px 0;">🎁आपके लिए एक सरप्राइज है💐</p>
+
+    <button onclick="startMagic()" style="background: #ff0055; color: white; border: 2px solid white; padding: 15px 50px; font-size: 20px; font-weight: bold; border-radius: 50px; cursor: pointer; box-shadow: 0 0 20px #ff0055; animation: pulse 1.5s infinite;">
+        👉 यहाँ टच करके खोलें 👈
+    </button>
+
+</div>
+
+<script>
+    function startMagic() {
+        // 1. गाना बजाएं
+        var audio = document.getElementById("holiAudio");
+        if(audio) {
+            audio.play().catch(error => console.log("Audio Error"));
+        }
+
+        // 2. वेलकम स्क्रीन हटा दें
+        document.getElementById("welcomeScreen").style.display = "none";
+    }
+</script>
+
+<style>
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+</style>
+
+
+
+
+
  <!----- Main Background ------>
 
 
